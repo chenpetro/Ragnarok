@@ -1,0 +1,27 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+:root {
+  --background-color: #1c2023;
+}
+
+body {
+  width: 1920px;
+  height: 5460px;
+  background: var(--background-color);
+  font-family: "Rubik";
+}
+
+.header {
+  height: 1363px;
+  background: url("/img/King.png") no-repeat right top;
+}
+.header__nav {
+  display: flex;
+}
+
+.nav-link {
+  padding-top: 47px;
+}
+
+.navbar-nav {
+  margin-top: 47px;
+}
