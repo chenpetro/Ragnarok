@@ -1,33 +1,111 @@
-@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
 
 :root {
-    --background-color: #1c2023;
+  --background-color: #1c2023;
+  --font-family: "Rubik", sans-serif;
+  --second-family: "Inter", sans-serif;
+  --navtext-color:  #FFFFFF80;
+  --navtext-hoover: #8856D9;
+  --white-color: #fff;
+  --text-color: #a9c7c7;
 }
 
-
-body{
-    width: 1920px;
-    height: 5460px;
-    background: var(--background-color);
-    font-family: "Rubik";
+body {
+  width: 1920px;
+  height: 5460px;
+  background: var(--background-color);
+  font-family: var(--font-family);
+  font-size: 14px;
+  font-weight: 400;
 }
-
-.header{
-    height: 1363px;
-    background: url("/img/King.png") no-repeat right top;
-    &__nav{
-        display: flex;
-    } 
-}
-
 
 .nav-link{
-    padding-top: 47px;
+    color: var(--navtext-color);
+    line-height: 193%;
+    &:hover{
+        color: var(--navtext-hoover)
+      }
+}
+.navbar {
+  &-button {
+    position: relative; // Change to relative
+    border: none;
+    background: transparent; // Ensure background is transparent
+  }
+  &-nav{
+    display: flex;
+    width: 640px;
+    justify-content: space-between;
+    margin-left: 370px;
+  }
+
+  &-toggler:focus {
+    outline: none;
+    box-shadow: none;
+    position: relative;
+  }
+  &-dropdown {
+    background-color: transparent!important; // Ensures dropdown background is transparent
+    border: none; // Removes any borders
+    color: red; // Adjust this as necessary for visibility
+    // &-li{
+    //     background-color: transparent!important;
+    // }
+}
 }
 
-.navbar{
-    &-nav{
-        margin-top: 47px;
+header{
+  height: 1363px;
+  background: url("/img/King.png") no-repeat right top;
+
+}
+
+.navtext-language{
+    font-weight: 700;
+    color: var(--white-color);
+}
+
+
+.navbar-dropdown.active {
+    background-color: transparent !important; // Ensures background is transparent when active
+}
+
+.main{
+    &-text{
+    width: 538px;
+    height: 199px;
+    margin-left: 280px;
+    margin-top: 112px;
+    margin-bottom: 27px;
+    font-family: var(--font-family);
+    font-weight: 600;
+    font-size: 100px;
+    line-height: 100%;
+    color: var(--white-color);
+    }
+    &-subtext{
+        width: 543px;
+        height: 74px;
+        margin-left: 287px;
+        font-family: var(--second-family);
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 150%;
+        color: var(--text-color);
+    }
+    &-button{
+        width: 145px;
+        height: 42px;
+        margin-left: 287px;
+        border-radius: 6px;
+        background: var(--navtext-hoover);
+        border: none;
+        margin-top: 50px;
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 16px;
+        text-transform: uppercase;
+        color: var(--white-color);
     }
 }
+

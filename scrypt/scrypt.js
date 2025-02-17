@@ -1,3 +1,17 @@
+const navbarButton = document.querySelector('.navbar-toggler');
+const navbarCollapse = document.querySelector('#navbarSupportedContent');
+
+
+
+
+
+
+
+
+
+
+
+
 
 // const swiper = new Swiper('.swiper', {
 //     // Optional parameters
