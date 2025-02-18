@@ -3,10 +3,11 @@
   --background-color: #1c2023;
   --font-family: "Rubik", sans-serif;
   --second-family: "Inter", sans-serif;
-  --navtext-color: #FFFFFF80;
-  --navtext-hoover: #8856D9;
+  --navtext-color: #ffffff80;
+  --navtext-hoover: #8856d9;
   --white-color: #fff;
   --text-color: #a9c7c7;
+  --item-text-color: #8c96a0;
 }
 
 body {
@@ -16,6 +17,11 @@ body {
   font-family: var(--font-family);
   font-size: 14px;
   font-weight: 400;
+}
+
+.img-burger {
+  margin-left: 290px;
+  margin-top: 10px;
 }
 
 .nav-link {
@@ -49,8 +55,9 @@ body {
 }
 
 header {
-  height: 1363px;
+  height: 764px;
   background: url("/img/King.png") no-repeat right top;
+  margin: 0 auto;
 }
 
 .navtext-language {
@@ -96,5 +103,70 @@ header {
   font-weight: 500;
   font-size: 16px;
   text-transform: uppercase;
+  color: var(--white-color);
+}
+
+.editions__header {
+  margin: 54px auto 32px;
+  text-align: center;
+  color: var(--white-color);
+  font-family: var(--font-family);
+  font-weight: 600;
+  font-size: 40px;
+}
+.editions__list {
+  width: 1132px;
+  height: 458px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+.editions__list__item {
+  border-radius: 6px;
+  width: 350px;
+  height: 458px;
+  background: linear-gradient(180deg, #141615 0%, #1c2023 100%);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+.editions__list__item__img {
+  margin: 17px auto 21px;
+}
+.editions__list__item__title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 16px;
+  color: var(--white-color);
+  text-align: center;
+}
+.editions__list__item__subtitle {
+  margin: 15px auto 32px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--text-color);
+}
+.editions__list__item__text {
+  font-family: var(--font-family);
+  color: var(--item-text-color);
+  row-gap: 12px;
+  align-items: start;
+  margin-left: 17px;
+}
+.editions__list__item__price1 {
+  align-items: end;
+  margin: 6px 0 14px 270px;
+  color: var(--white-color);
+}
+.editions__list__item__btn1 {
+  margin-left: 237px;
+  width: 96px;
+  height: 29px;
+  border-radius: 6px;
+  border: none;
+  width: 96px;
+  height: 29px;
+  background-color: var(--navtext-hoover);
   color: var(--white-color);
 }
