@@ -9,6 +9,7 @@
   --text-color: #a9c7c7;
   --item-text-color: #8c96a0;
   --button-bg: #ff4136;
+  --playbtn-bg: #30373f;
 }
 
 body {
@@ -20,16 +21,20 @@ body {
   font-weight: 400;
 }
 
+a {
+  text-decoration: none;
+}
+
 .img-burger {
   margin-left: 290px;
   margin-top: 10px;
 }
 
-.nav-link {
+.nav-button {
   color: var(--navtext-color);
   line-height: 193%;
 }
-.nav-link:hover {
+.nav-button:hover {
   color: var(--navtext-hoover);
 }
 
@@ -44,6 +49,9 @@ body {
   justify-content: space-between;
   margin-left: 370px;
 }
+.navbar .active {
+  color: #8856d9;
+}
 .navbar-toggler:focus {
   outline: none;
   box-shadow: none;
@@ -51,8 +59,6 @@ body {
 }
 .navbar-dropdown {
   background-color: transparent !important;
-  border: none;
-  color: red;
 }
 
 header {
@@ -161,15 +167,15 @@ header {
   color: var(--white-color);
 }
 .editions__list__item__btn1 {
-  margin-left: 237px;
-  width: 96px;
-  height: 29px;
-  border-radius: 6px;
-  border: none;
-  width: 96px;
-  height: 29px;
-  background-color: var(--navtext-hoover);
-  color: var(--white-color);
+  margin-left: 237px !important;
+  width: 96px !important;
+  height: 29px !important;
+  border-radius: 6px !important;
+  border: none !important;
+  width: 96px !important;
+  height: 29px !important;
+  background-color: var(--navtext-hoover) !important;
+  color: var(--white-color) !important;
 }
 
 .dualSense__title {
@@ -239,6 +245,59 @@ header {
   color: var(--white-color);
   background-color: var(--button-bg);
   border-radius: 6px;
+}
+
+.trailer__title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--white-color);
+  text-align: center;
+  margin-top: 60px;
+  margin-bottom: 32px;
+}
+.trailer__box {
+  width: 1920px;
+  height: 944px;
+  background: url(/img/trailer.png) no-repeat center/cover;
+  opacity: 0.7;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.trailer__box__title {
+  font-weight: 500;
+  font-size: 50px;
+  line-height: 78%;
+  color: var(--white-color);
+  width: 404px;
+  height: 39px;
+  margin-top: 457px;
+  z-index: 2;
+}
+.trailer__box__btn {
+  border-radius: 6px;
+  width: 93px;
+  height: 33px;
+  background-color: var(--playbtn-bg);
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  color: var(--white-color);
+  border: none;
+  margin-top: 29px;
+  z-index: 2;
+}
+.trailer__video {
+  width: 100%; /* Makes video responsive */
+  height: 100%; /* Makes video fill the box */
+  position: absolute; /* Allows positioning behind other elements */
+  top: 0; /* Aligns the video to the top */
+  left: 0; /* Aligns the video to the left */
+  z-index: 1; /* Ensures video is behind text */
+  display: none;
 }
 
 @keyframes animateY50 {
