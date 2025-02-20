@@ -8,6 +8,7 @@
   --white-color: #fff;
   --text-color: #a9c7c7;
   --item-text-color: #8c96a0;
+  --button-bg: #ff4136;
 }
 
 body {
@@ -169,4 +170,85 @@ header {
   height: 29px;
   background-color: var(--navtext-hoover);
   color: var(--white-color);
+}
+
+.dualSense__title {
+  font-family: var(--font-family);
+  font-weight: 700;
+  font-size: 40px;
+  color: var(--white-color);
+  text-align: center;
+  margin-top: 54px;
+  margin-bottom: 20px;
+}
+.dualSense__main {
+  position: relative;
+  width: 917px;
+  height: 309px;
+  margin: 0 auto;
+}
+.dualSense__main__img {
+  position: absolute;
+  right: 0;
+  top: -12%;
+  animation: animateY50 5s linear infinite;
+}
+.dualSense__main__text-top {
+  width: 425px;
+  height: 54px;
+  margin-bottom: 22px;
+  margin-top: 70px;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--text-color);
+}
+.dualSense__main__text-top__span {
+  font-weight: 700;
+  color: var(--navtext-hoover);
+}
+.dualSense__main__text-bottom {
+  width: 410px;
+  height: 81px;
+  font-size: 18px;
+  line-height: 150%;
+  color: var(--text-color);
+}
+.dualSense__main__text-bottom__span {
+  font-weight: 700;
+  color: var(--button-bg);
+}
+.dualSense__main__bottom {
+  margin-top: 27px;
+  display: flex;
+}
+.dualSense__main__bottom__price {
+  width: 105px;
+  height: 36px;
+  font-weight: 700;
+  font-size: 30px;
+  color: var(--white-color);
+  margin-right: 33px;
+}
+.dualSense__main__bottom__btn {
+  width: 274px;
+  height: 46px;
+  font-family: var(--font-family);
+  font-weight: 500;
+  font-size: 16px;
+  text-transform: uppercase;
+  color: var(--white-color);
+  background-color: var(--button-bg);
+  border-radius: 6px;
+}
+
+@keyframes animateY50 {
+  25% {
+    transform: translateY(100px);
+  }
+  50% {
+    transform: translateY(0);
+  }
+  75% {
+    transform: translateY(-100px);
+  }
 }
