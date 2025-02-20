@@ -142,6 +142,33 @@ header {
       display: flex;
       flex-direction: column;
       justify-content: center;
+      &__btn1{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 13px;
+        &:hover{
+          color: var(--navtext-hoover);
+          background-color: var(--playbtn-bg);
+        }
+      }
+      &__btn2{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 13px;
+        &:hover{
+          color: var(--navtext-hoover);
+          background-color: var(--playbtn-bg);
+        }
+      }
+      &__btn3{
+        font-family: var(--font-family);
+        font-weight: 500;
+        font-size: 13px;
+        &:hover{
+          color: var(--navtext-hoover);
+          background-color: var(--playbtn-bg);
+        }
+      }
       &__img {
         margin: 17px auto 21px;
       }
@@ -172,18 +199,51 @@ header {
         color: var(--white-color);
       }
       &__btn1 {
-        margin-left: 237px !important;
-        width: 96px !important;
-        height: 29px !important;
-        border-radius: 6px !important;
-        border: none !important;
-        width: 96px !important;
-        height: 29px !important;
-        background-color: var(--navtext-hoover) !important;
-        color: var(--white-color) !important;
+        margin-left: 237px ;
+        width: 96px ;
+        height: 29px ;
+        border-radius: 6px ;
+        border: none ;
+        width: 96px ;
+        height: 29px ;
+        background-color: var(--navtext-hoover) ;
+        color: var(--white-color) ;
+      }
+      &__btn2 {
+        margin-left: 237px ;
+        width: 96px ;
+        height: 29px ;
+        border-radius: 6px ;
+        border: none ;
+        width: 96px ;
+        height: 29px ;
+        background-color: var(--navtext-hoover) ;
+        color: var(--white-color) ;
+      }
+      &__btn3 {
+        margin-left: 237px ;
+        width: 96px ;
+        height: 29px ;
+        border-radius: 6px ;
+        border: none ;
+        width: 96px ;
+        height: 29px ;
+        background-color: var(--navtext-hoover) ;
+        color: var(--white-color) ;
       }
     }
   }
+}
+
+.modal {
+  
+
+}
+.modal-content {
+  width: 470px; 
+  height: 565px;
+  background: url('/img/worriors_axe_bowel.png') no-repeat center/cover;
+ 
 }
 
 .dualSense {
