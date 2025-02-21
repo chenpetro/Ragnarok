@@ -3,8 +3,25 @@ const navbarCollapse = document.querySelector('#navbarSupportedContent');
 
 //Modal///////////////////////////////////////////////////
 
+const btnBuyNow1 = document.querySelector('.editions__list__item__btn1')
+const btnBuyNow2 = document.querySelector('.editions__list__item__btn2')
+const btnBuyNow3 = document.querySelector('.editions__list__item__btn3')
+const price1 = document.querySelector('.editions__list__item__price1')
+const price2 = document.querySelector('.editions__list__item__price2')
+const price3 = document.querySelector('.editions__list__item__price3')
 
 
+const ModalFormSum = document.querySelector('.modal-form-summa')
+
+btnBuyNow1.addEventListener('click', function(){
+ModalFormSum.textContent = price1.textContent 
+})
+btnBuyNow2.addEventListener('click', function(){
+ModalFormSum.textContent = price2.textContent
+})
+btnBuyNow3.addEventListener('click', function(){
+ModalFormSum.textContent = price3.textContent 
+})
 
 
 
