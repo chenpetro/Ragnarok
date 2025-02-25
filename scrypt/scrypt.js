@@ -186,25 +186,28 @@ exploreToggle2Btn.addEventListener('click', ()=>{
 
 //Swiper/////////////////////////////////////////////////////////
 
+// Swiper initialization
 const swiper = new Swiper('.swiper', {
-    // Optional parameters
     loop: true,
     slidesPerView: 'auto',
     spaceBetween: 20,
-    // If we need pagination
-    // pagination: {
-    //   el: '.swiper-pagination',
-    //   clickable: true,
-    // },
-  
-    // Navigation arrows
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
-  
-    // And if we need scrollbar
-    // scrollbar: {
-    //   el: '.swiper-scrollbar',
-    // },
+});
+
+// Accordion button click event
+document.querySelectorAll('.accordion-button').forEach(button => {
+  button.addEventListener('click', function() {
+    const isExpanded = this.getAttribute('aria-expanded') === 'true';
+
+    if (isExpanded) {
+      // Change to open icon when collapsed
+      this.style.setProperty('--icon-image', "url('/img/icon_close.svg')");
+    } else {
+      // Change to close icon when expanded
+      this.style.setProperty('--icon-image', "url('/img/icon_open.svg')");
+    }
   });
+});

@@ -11,6 +11,7 @@
   --item-text-color: #8c96a0;
   --button-bg: #ff4136;
   --playbtn-bg: #30373f;
+  --icon-image: url('/img/icon_close.svg'); /* Default icon */
 }
 
 body {
@@ -855,6 +856,69 @@ nav {
 .swiper-button-next::after {
   display: none;
 }
+
+.faq {
+  &__title {
+    font-weight: 700;
+    font-size: 40px;
+    color: var(--white-color);
+    text-align: center;
+    margin-top: 107px;
+    margin-bottom: 32px;
+  }
+}
+
+.accordion {
+  width: 903px;
+  margin: 0 auto;
+
+  &-item {
+    border-bottom: 2px solid var(--navtext-hoover);
+    background-color: #1c2023;
+    color: var(--white-color);
+  }
+
+  &-button {
+    background-color: var(--background-color);
+    color: var(--white-color);
+    font-weight: 600;
+    font-size: 17px;
+    position: relative;
+
+    &::after {
+      content: '';
+      display: inline-block;
+      width: 30px;
+      height: 30px;
+      background-image: var(--icon-image);
+      background-size: contain;
+      background-repeat: no-repeat;
+      position: absolute;
+      right: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    &:focus,
+    :active,
+    .collapsed {
+      box-shadow: none;
+      background-color: transparent;
+      color: var(--white-color);
+    }
+
+    &:active {
+      background-color: var(--background-color);
+    }
+  }
+
+  &-body-date {
+    color: var(--button-bg);
+  }
+}
+
+
+
 @keyframes animateY50 {
   25% {
     transform: translateY(50px);
