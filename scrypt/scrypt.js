@@ -198,16 +198,14 @@ const swiper = new Swiper('.swiper', {
 });
 
 // Accordion button click event
-document.querySelectorAll('.accordion-button').forEach(button => {
+let accordionRotate = 1
+document.querySelectorAll('.accordion-header').forEach(button => {
   button.addEventListener('click', function() {
-    const isExpanded = this.getAttribute('aria-expanded') === 'true';
-
-    if (isExpanded) {
-      // Change to open icon when collapsed
-      this.style.setProperty('--icon-image', "url('/img/icon_close.svg')");
-    } else {
-      // Change to close icon when expanded
-      this.style.setProperty('--icon-image', "url('/img/icon_open.svg')");
+    accordionRotate++
+    if(accordionRotate%2 ==0){
+        button.children[1].style.rotate = '-45deg'
+    }else{
+        button.children[1].style.rotate = '0deg'
     }
   });
 });
