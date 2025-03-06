@@ -22,6 +22,9 @@ body {
   font-size: 14px;
   font-weight: 400;
   margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 a {
   text-decoration: none;
@@ -51,6 +54,23 @@ nav {
     background: transparent; // Ensure background is transparent
     z-index: 2;
   }
+
+  &-icon{
+    width: 35px;
+    height: 26px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    &-line{
+      height: 3px;
+      width: 100%;
+      border-radius: 10%;
+      background: var(--white-color);
+    }
+  }
+
+
   &-nav {
     display: flex;
     width: 640px;
@@ -60,6 +80,10 @@ nav {
 
   .active {
     color: #8856d9;
+  }
+
+  .navbar-toggler-icon {
+    background-image: none !important; 
   }
 
   &-toggler:focus {
@@ -72,10 +96,16 @@ nav {
   }
 }
 
+.line2{
+  width: 50%;
+}
+
 .header {
   height: 764px;
   background: url("/img/bg.png") no-repeat right top;
   margin: 0 auto;
+  
+  
   &__snow {
     position: absolute;
     right: 0;
@@ -107,6 +137,8 @@ nav {
     font-size: 100px;
     line-height: 100%;
     color: var(--white-color);
+    position: relative;
+    z-index: 1;
   }
   &-subtext {
     width: 543px;
@@ -131,6 +163,12 @@ nav {
     font-size: 16px;
     text-transform: uppercase;
     color: var(--white-color);
+    cursor: pointer;
+    position: absolute;
+    z-index: 2;
+    &-link{
+      color: var(--white-color);
+    }
   }
 }
 
@@ -878,6 +916,9 @@ nav {
     &-icon {
       transition: all 0.5s;
     }
+
+
+
   }
   &-item {
     border-bottom: 2px solid var(--navtext-hoover);
@@ -953,11 +994,12 @@ nav {
     display: flex;
     width: 964px;
     position: relative;
-    &__item {
+    &__item a{
       margin-right: 22px;
       text-transform: uppercase;
       font-size: 16px;
       line-height: 169%;
+      color: var(--text-color);
     }
     &__lang {
       position: absolute;
@@ -1060,7 +1102,7 @@ nav {
       top: -50%;
       width: 70%;
       filter: grayscale(20%) opacity(10%);
-      z-index: 0;
+      z-index: 1;
     }
   }
 
@@ -1076,6 +1118,7 @@ nav {
   .main {
     width: 430px;
     display: flex;
+    flex-direction: column;
     margin: 0 auto;
     justify-content: center;
     &-text {
@@ -1100,6 +1143,13 @@ nav {
       width: 250px;
       height: 50px;
       font-size: 24px;
+      position: static;
+     
+      &-link{
+        display: block;
+        align-self: center;
+        margin-top: 20%;
+      }
     }
   }
 
@@ -1111,6 +1161,7 @@ nav {
   
     &__header {
       font-size: 40px;
+      position: static;
     }
     &__list {
       width: 430px;
@@ -1230,7 +1281,7 @@ nav {
 
   .modal {
     &-content {
-      width: 470px;
+      width: 415px;
       height: 565px;
       background: url("/img/worriors_axe_bowel.png") no-repeat center/cover;
     }
@@ -1419,40 +1470,35 @@ nav {
   }
 
   .dualSense {
+    
     &__title {
-      font-weight: 700;
-      font-size: 40px;
-      color: var(--white-color);
-      text-align: center;
       margin-top: 54px;
-      margin-bottom: 20px;
+      margin-bottom: 0px;
     }
     &__main {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
       position: relative;
-      width: 917px;
-      height: 309px;
-      margin: 0 auto;
+      width: 100%;
+      height: auto;
+      margin-left: 0px;
       &__img {
-        position: absolute;
-        right: 0;
-        top: -12%;
+        position: static;
         animation: animateY50 10s linear infinite;
       }
       &__text-top {
-        width: 425px;
-        height: 54px;
-        margin-bottom: 22px;
-        margin-top: 70px;
-        font-size: 18px;
-        line-height: 150%;
-        color: var(--text-color);
+        width: 90%;
+       text-align: center;
+       align-self: center;
         &__span {
           font-weight: 700;
           color: var(--navtext-hoover);
         }
       }
       &__text-bottom {
-        width: 410px;
+        width: 90%;
+      align-self: center;
         height: 81px;
         font-size: 18px;
         line-height: 150%;
@@ -1471,11 +1517,12 @@ nav {
           font-weight: 700;
           font-size: 30px;
           color: var(--white-color);
-          margin-right: 33px;
+          margin-left: 20px;
+          margin-right: 20px;
         }
         &__btn {
-          width: 274px;
-          height: 46px;
+          width: 60%;
+          height: 40px;
           font-family: var(--font-family);
           font-weight: 500;
           font-size: 16px;
@@ -1502,8 +1549,8 @@ nav {
       margin-bottom: 32px;
     }
     &__box {
-      width: 1920px;
-      height: 944px;
+      width: 430px;
+      height: auto;
       background: url(/img/trailer.png) no-repeat center / cover;
       opacity: 0.7;
       margin: 0 auto;
@@ -1518,21 +1565,11 @@ nav {
         color: var(--white-color);
         width: 404px;
         height: 39px;
-        margin-top: 457px;
+        margin-top: 30%;
         z-index: 2;
       }
       &__btn {
-        border-radius: 6px;
-        width: 93px;
-        height: 33px;
-        background-color: var(--playbtn-bg);
-        font-family: var(--font-family);
-        font-weight: 500;
-        font-size: 16px;
-        color: var(--white-color);
-        border: none;
-        margin-top: 29px;
-        z-index: 2;
+      margin-bottom: 50%;
       }
     }
     &__video {
@@ -1547,10 +1584,11 @@ nav {
   }
 
   .explore {
-    width: 1000px;
-    height: 1265px;
+    width: 430px;
+    height: auto;
     color: var(--white-color);
     margin: 0 auto;
+   
     &__title {
       font-weight: 600;
       font-size: 40px;
@@ -1591,19 +1629,22 @@ nav {
     }
     &__box {
       display: flex;
+      flex-direction: column;
       &__img {
         margin-top: -70px;
         margin-left: 70px;
       }
       &__desc {
         row-gap: 23px;
-        width: 1000px;
-        height: 286px;
-        margin-top: 58px;
-        margin-left: -50px;
+        width: 430px;
+        height: auto;
+        padding: 30px;
+        margin-top: 20px;
+        margin-left: 0px;
         font-size: 15px;
         line-height: 240%;
         color: var(--navtext-hoover);
+        
         &__CPU,
         &__RAM,
         &__OS,
@@ -1616,17 +1657,10 @@ nav {
         }
       }
       &__btn {
-        width: 96px;
-        height: 29px;
-        border-radius: 6px;
-        border: none;
-        font-family: var(--font-family);
-        font-weight: 500;
-        font-size: 13px;
-        text-transform: uppercase;
-        background: #ff4136;
-        color: white;
-        margin-left: -50px;
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        margin-left: 15%;
       }
     }
     &__subtitle2 {
@@ -1668,17 +1702,21 @@ nav {
     }
     &__box2 {
       display: flex;
+      flex-direction: column;
+      align-items: center;
+      margin-top: -50px;
       // &__left {
       // }
       &__desc {
         row-gap: 23px;
         width: 409px;
         height: 250px;
-        margin-top: 150px;
-        margin-left: 100px;
+        margin-top: 30px;
+        margin-left: 0px;
         font-size: 15px;
         line-height: 240%;
         color: var(--navtext-hoover);
+        padding: 30px;
         &__platform,
         &__premiere,
         &__publisher,
@@ -1689,25 +1727,25 @@ nav {
         }
       }
       &__btn {
-        width: 96px;
-        height: 29px;
-        border-radius: 6px;
-        border: none;
-        font-family: var(--font-family);
-        font-weight: 500;
-        font-size: 13px;
-        text-transform: uppercase;
-        background: #ff4136;
-        color: white;
-        margin-left: 100px;
+        width: 300px;
+        height: 50px;
+        font-size: 20px;
+        margin-left: 15%;
+        margin-top: 30px;
+        margin-bottom: 30px;
       }
       &__img {
-        margin-left: 60px;
+        margin-left: 0;
+        width: 80%;
       }
     }
   }
-
+  
   .news {
+    width: 430px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     &__title {
       font-weight: 700;
       font-size: 40px;
@@ -1715,16 +1753,18 @@ nav {
       text-align: center;
       margin-top: 54px;
       margin-bottom: 20px;
+      
     }
   }
 
   .swiper {
-    width: 1830px;
+    width: 430px;
     margin: 0 auto;
+    margin-left: 20px;
     &-slide {
       color: white;
-      width: 615px;
-      height: 346px;
+      width: 90%;
+      height: auto;
       border-radius: 6px;
       flex-shrink: 0;
       background: linear-gradient(180deg, #30373f 22.4%, #141615 100%);
@@ -1750,8 +1790,9 @@ nav {
         margin-top: 15px;
       }
       &__title {
-        width: 523px;
-        height: 22px;
+        width: 90%;
+        text-align: center;
+        height: auto;
         font-weight: 600;
         font-size: 19px;
         text-transform: uppercase;
@@ -1760,33 +1801,49 @@ nav {
         margin-bottom: 14px;
       }
       &__bottom {
-        margin-left: 20px;
+        margin-left: 0px;
         display: flex;
+        flex-direction: column;
+        align-items: center;
+justify-content: center;
+
         &__text {
-          width: 256px;
-          height: 209px;
+          width: 90%;
+          height: auto;
           font-family: var(--font-family);
           font-weight: 400;
-          font-size: 12px;
+          font-size: 15px;
           line-height: 142%;
           color: white;
-          margin-left: 24px;
+          margin-left: 0px;
+          text-align: center;
         }
+
+        &__img{
+          width: 90%;
+          height: auto;
+          margin-bottom: 5%;
+
+        }
+
         &__btn {
-          position: absolute;
-          bottom: 20px;
-          right: 20px;
+          position: static;
+          bottom: 0px;
+          right: 0px;
           padding: 8px 30px;
-          // width: 35px;
-          // height: 15px;
+          width: 60%;
+          height: 25%;
           font-family: var(--font-family);
           font-weight: 500;
-          font-size: 13px;
+          font-size: 16px;
           text-transform: uppercase;
           border-radius: 6px;
           background: var(--item-text-color);
           color: var(--white-color);
           border: none;
+          margin-left: 0;
+          margin-bottom: 5%;
+          align-self: center;
         }
       }
     }
@@ -1840,13 +1897,12 @@ nav {
       font-size: 40px;
       color: var(--white-color);
       text-align: center;
-      margin-top: 107px;
-      margin-bottom: 32px;
+      margin: 50px auto 32px;
     }
   }
 
   .accordion {
-    width: 903px;
+    width: 90%;
     margin: 0 auto;
     &-header {
       display: flex;
@@ -1897,6 +1953,7 @@ nav {
 
     &-body-date {
       color: var(--button-bg);
+      width: 430px;
     }
   }
 
@@ -1920,17 +1977,19 @@ nav {
     position: relative;
     &-bg {
       position: absolute;
-      right: 20%;
-      top: -50%;
+      right: 10%;
+      top: -40%;
       z-index: -1;
     }
     &__list {
       margin: 0 auto;
       display: flex;
-      width: 964px;
+      width: 80%;
       position: relative;
+      display: flex;
+      flex-direction: column;
       &__item {
-        margin-right: 22px;
+        margin-right: 0;
         text-transform: uppercase;
         font-size: 16px;
         line-height: 169%;
@@ -1947,6 +2006,7 @@ nav {
       }
     }
     &__text {
+      width: 80%;
       margin: 50px auto 38px;
       text-align: center;
     }
@@ -1972,14 +2032,14 @@ nav {
 
   @keyframes animateY50 {
     25% {
-      transform: translateY(50px);
+      transform: translateY(5%);
     }
 
     50% {
       transform: translateY(0);
     }
     75% {
-      transform: translateY(-50px);
+      transform: translateY(-5%);
     }
   }
 }
