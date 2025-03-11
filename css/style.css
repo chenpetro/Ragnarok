@@ -15,7 +15,7 @@
 }
 
 body {
-  width: 1920px;
+  max-width: 1920px;
   height: 5460px;
   background: var(--background-color);
   font-family: var(--font-family);
@@ -1192,7 +1192,6 @@ nav {
   .modal-content {
     width: 415px;
     height: 565px;
-    background: url("/img/worriors_axe_bowel.png") no-repeat center/cover;
   }
   .modal-title {
     font-weight: 700;

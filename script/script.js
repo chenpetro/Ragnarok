@@ -9,6 +9,13 @@ const btnBuyNow3 = document.querySelector('.editions__list__item__btn3')
 const price1 = document.querySelector('.editions__list__item__price1')
 const price2 = document.querySelector('.editions__list__item__price2')
 const price3 = document.querySelector('.editions__list__item__price3')
+const dualSenseBtn = document.querySelector('.dualSense__main__bottom__btn')
+const modalContent = document.querySelector('.modal-content')
+const dualSenseTitle = document.querySelector('.dualSense__title')
+const dualSensePrice = document.querySelector('.dualSense__main__bottom__price')
+const ModalTitleSpan = document.querySelector('.modal-title-span')
+
+
 
 
 const ModalFormSum = document.querySelector('.modal-form-summa')
@@ -23,7 +30,40 @@ btnBuyNow3.addEventListener('click', function(){
 ModalFormSum.textContent = price3.textContent 
 })
 
+// dualSenseBtn.addEventListener('click', function(){
+//     modalContent.style.background = 'grey no-repeat center/cover'
+//     modalContent.position = relative;
+//     create img url("/img/joystick.png") over the background with size 80%   
+//     })
 
+dualSenseBtn.addEventListener('click', function() {
+    ModalFormSum.textContent = dualSensePrice.textContent;
+    ModalTitleSpan.textContent = dualSenseTitle.textContent;
+ 
+    // Set grey background
+    modalContent.style.background = 'grey no-repeat center/cover';
+    modalContent.style.position = 'relative';
+
+    // Create an img element for the joystick image
+    const img = document.createElement('img');
+    img.src = '/img/joystick.png';
+    img.style.opacity = 0.8;
+    img.zIndex = -3;
+    img.style.position = 'absolute';
+    img.style.top = '10%';
+    img.style.left = '15%';
+    img.style.transform = 'translate(-50%, -50%)';
+    img.style.width = '20%';
+    img.style.height = 'auto';
+    img.style.zIndex = '1';
+
+    // Remove existing img if it already exists (to avoid duplicates)
+    const existingImg = modalContent.querySelector('img');
+    if (existingImg) existingImg.remove();
+
+    // Add the image to the modal content
+    modalContent.appendChild(img);
+});
 
 
 
