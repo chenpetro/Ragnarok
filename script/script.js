@@ -304,3 +304,39 @@ document.querySelectorAll('.accordion-header').forEach(button => {
     }
   });
 });
+
+
+////////////////////// Modal Read 
+
+let isCustomBg = false; // Track if the background has been customized
+
+document.querySelectorAll('.swiper-slide__bottom__btn').forEach(button => {
+  button.addEventListener('click', () => {
+    const slide = button.closest('.swiper-slide');
+    const title = slide.querySelector('.swiper-slide__title').innerText;
+    const content = slide.querySelector('.swiper-slide__bottom__text').innerText;
+
+    const modalContent = document.getElementById('newsModal').querySelector('.modal-content');
+
+    // Set modal content
+    document.getElementById('newsModalLabel').innerText = title;
+    document.getElementById('newsModalBody').innerText = content;
+
+    // Apply custom style if not already applied
+    if (!isCustomBg) {
+      modalContent.classList.add('custom-bg');
+      isCustomBg = true;
+    }
+
+    // Open modal
+    const modal = new bootstrap.Modal(document.getElementById('newsModal'));
+    modal.show();
+  });
+});
+
+// Remove custom styles when modal is closed manually
+document.getElementById('newsModal').addEventListener('hidden.bs.modal', () => {
+  const modalContent = document.getElementById('newsModal').querySelector('.modal-content');
+  modalContent.classList.remove('custom-bg');
+  isCustomBg = false;
+});

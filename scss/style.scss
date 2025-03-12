@@ -1049,6 +1049,12 @@ nav {
   }
 }
 
+.custom-bg {
+  background-image: none !important;
+  background-color: var(--background-color) !important;
+  color: var(--text-color) !important;
+}
+
 @media (max-width: 430px) {
   body {
     width: 430px;
