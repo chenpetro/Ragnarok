@@ -1053,6 +1053,7 @@ nav {
   background-image: none !important;
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
+  height: 30%;
 }
 
  /* Set custom modal width and height */
@@ -1068,6 +1069,7 @@ nav {
   flex-direction: column;
   justify-content: center;
 }
+
 
 @media (max-width: 430px) {
   body {

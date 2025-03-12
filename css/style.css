@@ -983,6 +983,7 @@ nav {
   background-image: none !important;
   background-color: var(--background-color) !important;
   color: var(--text-color) !important;
+  height: 30%;
 }
 
 /* Set custom modal width and height */
