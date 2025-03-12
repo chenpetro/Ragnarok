@@ -1055,6 +1055,20 @@ nav {
   color: var(--text-color) !important;
 }
 
+ /* Set custom modal width and height */
+ .custom-modal-size {
+  max-width: 80% !important;
+  height: 30% !important;
+}
+
+/* Center vertically and adjust height */
+.custom-modal-size .modal-content {
+  height: 30% !important;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
 @media (max-width: 430px) {
   body {
     width: 430px;

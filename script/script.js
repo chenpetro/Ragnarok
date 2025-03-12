@@ -340,3 +340,11 @@ document.getElementById('newsModal').addEventListener('hidden.bs.modal', () => {
   modalContent.classList.remove('custom-bg');
   isCustomBg = false;
 });
+
+//////////////////////////////// Buy now Thank you notification
+document.querySelectorAll('.btn-modal-buy').forEach(button => {
+    button.addEventListener('click', () => {
+      const thankYouModal = new bootstrap.Modal(document.getElementById('thankYouModal'));
+      thankYouModal.show();
+    });
+  });
