@@ -36,6 +36,39 @@ ModalFormSum.textContent = price3.textContent
 //     create img url("/img/joystick.png") over the background with size 80%   
 //     })
 
+// dualSenseBtn.addEventListener('click', function() {
+//     ModalFormSum.textContent = dualSensePrice.textContent;
+//     ModalTitleSpan.textContent = dualSenseTitle.textContent;
+ 
+//     // Set grey background
+//     modalContent.style.background = 'grey no-repeat center/cover';
+//     modalContent.style.position = 'relative';
+
+//     // Create an img element for the joystick image
+//     const img = document.createElement('img');
+//     img.src = '/img/joystick.png';
+//     img.style.opacity = 0.8;
+//     img.zIndex = -3;
+//     img.style.position = 'absolute';
+//     img.style.top = '10%';
+//     img.style.left = '15%';
+//     img.style.transform = 'translate(-50%, -50%)';
+//     img.style.width = '20%';
+//     img.style.height = 'auto';
+//     img.style.zIndex = '1';
+
+//     // Remove existing img if it already exists (to avoid duplicates)
+//     const existingImg = modalContent.querySelector('img');
+//     if (existingImg) existingImg.remove();
+
+//     // Add the image to the modal content
+//     modalContent.appendChild(img);
+// });
+
+
+
+let isSecondClick = false;
+
 dualSenseBtn.addEventListener('click', function() {
     ModalFormSum.textContent = dualSensePrice.textContent;
     ModalTitleSpan.textContent = dualSenseTitle.textContent;
@@ -48,7 +81,6 @@ dualSenseBtn.addEventListener('click', function() {
     const img = document.createElement('img');
     img.src = '/img/joystick.png';
     img.style.opacity = 0.8;
-    img.zIndex = -3;
     img.style.position = 'absolute';
     img.style.top = '10%';
     img.style.left = '15%';
@@ -63,10 +95,33 @@ dualSenseBtn.addEventListener('click', function() {
 
     // Add the image to the modal content
     modalContent.appendChild(img);
+
+    isSecondClick = true; // Set state to track first click
 });
 
+// Revert changes or update image on second click
+document.body.addEventListener('click', function(event) {
+    // Prevent closing when clicking on dualSenseBtn or inside modalContent
+    if (event.target === dualSenseBtn || modalContent.contains(event.target)) return;
 
+    if (isSecondClick) {
+        // On second click, change image
+        const img = modalContent.querySelector('img');
+        if (img) {
+            img.src = '/img/joystick.png'; // Change to original joystick image
+        }
 
+        // Reset state and revert all changes
+        setTimeout(() => {
+            ModalFormSum.textContent = '';
+            ModalTitleSpan.textContent = '';
+            modalContent.style.background = '';
+            modalContent.style.position = '';
+            if (img) img.remove(); // Remove the image after reset
+            isSecondClick = false; // Reset state
+        }, 200); // Small delay to show the change before reset
+    }
+});
 
 //Trailer Section/////////////////////////////////////////////////////////////
 
